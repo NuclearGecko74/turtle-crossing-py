@@ -14,7 +14,13 @@ class Player(Turtle):
         self.shape("turtle")
         self.left(90)
         self.penup()
-        self.goto(STARTING_POSITION)
+        self.reset_position()
 
     def move_up(self):
         self.forward(MOVE_DISTANCE)
+
+    def has_crossed_finish_line(self):
+        return self.ycor() > FINISH_LINE_Y
+
+    def reset_position(self):
+        self.goto(STARTING_POSITION)
