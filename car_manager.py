@@ -1,5 +1,5 @@
 from turtle import Turtle
-from random import randint, choice, uniform
+from random import randint, choice
 
 COLORS = ["red", "orange", "yellow", "green", "blue", "purple"]
 STARTING_MOVE_DISTANCE = 5
@@ -22,7 +22,7 @@ class CarManager:
         if self.cars and self.cars[-1].xcor() >= 260:
             return
         for _ in range(randint(1, 2)):
-            car = self.generate_car()
+            car = generate_car()
             car.goto(300, randint(-200, 260))
             self.cars.append(car)
 
