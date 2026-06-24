@@ -6,17 +6,17 @@ STARTING_MOVE_DISTANCE = 5
 MOVE_INCREMENT_PERCENTAGE = 0.2
 
 
+def generate_car():
+    new_car = Turtle("square")
+    new_car.penup()
+    new_car.color(choice(COLORS))
+    new_car.shapesize(stretch_wid=1, stretch_len=2)
+    return new_car
+
 class CarManager:
     def __init__(self):
         self.cars = []
         self.move_distance = STARTING_MOVE_DISTANCE
-
-    def generate_car(self):
-        new_car = Turtle("square")
-        new_car.penup()
-        new_car.color(choice(COLORS))
-        new_car.shapesize(stretch_wid=1, stretch_len=2)
-        return new_car
 
     def spawn_car(self):
         if self.cars and self.cars[-1].xcor() >= 260:
@@ -36,7 +36,6 @@ class CarManager:
 
     def increase_speed(self):
         self.move_distance *= 1 + MOVE_INCREMENT_PERCENTAGE
-        print(self.move_distance)
 
     def car_collision(self, player):
         for car in self.cars:
