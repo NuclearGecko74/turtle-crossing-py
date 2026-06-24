@@ -39,6 +39,6 @@ class CarManager:
 
     def car_collision(self, player):
         for car in self.cars:
-            if car.distance(player) < 25 and player.ycor() < car.ycor():
+            if car.distance(player) < 25:
                 return True
         return False
